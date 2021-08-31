@@ -42,13 +42,17 @@ function App() {
   if (loading) {
     spinner = <ReactBootStrap.Spinner className="loaderSpinner" animation="border" />
   }
+    
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
      
   return (
     <div className="coin-app">
       <div className="coin-search">
         <h1 className="coin-text"><span className="firstPart">Crypto</span><span className="secondPart">Tracker</span></h1>
         <p className="only" >Only the top 100 coin are available (Real Time Tracker)</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
           type="text"
           placeholder="Search..." 
